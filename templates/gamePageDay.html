@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='static.css') }}">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <title>Scrum Game</title>
+</head>
+<script type="text/javascript">
+      function showAppreciationPopup() {
+        alert("Congratulations! You have completed the game!");
+      }
+
+      function reloadGame() {
+        window.location.href = '/gamePage/roll_day';
+      }
+
+      function rollDice() {
+        window.location.href = '/gamePage/roll';
+      }
+
+      function rollDiceDay() {
+        window.location.href = '/gamePage/roll_day';
+      }
+
+      $(document).ready(function() {
+		$('#reset').click(function() {
+			window.location.href = '/gamePage';
+		});
+	});
+
+</script>
+<body onload="reloadGame()">
+<h1>
+    Scrum Game
+</h1>
+<h2>
+    {{ scoreText }}
+</h2>
+<h3>
+    {{ dayCount }}
+</h3>
+<div class="box-container">
+    {% for index in range(0,bucket_values|length) %}
+    <div class="bucket">
+        {% if index == 0 %}
+        <p class="number">&infin;</p>
+        {% else %}
+        <p class="number"> {{ bucket_values[index] }} </p>
+        {% endif %}
+        <div class="box-label">{{ bucket_name[index] }}</div>
+    </div>
+    {% endfor %}
+</div>
+<div class="button-container">
+    <div class="dice">
+        {% for i in range(dice_value) %}
+        <span class="dot"></span>
+        {% endfor %}
+    </div>
+</div>
+<div class="info-button">
+    <span class="info-text">i</span>
+    <div class="info-content">
+        1. Click on Roll a Dice button to roll and move the tokens in the bucket to next stage.
+        <br>
+        2. This steps contines till 10 days are completed. After 5 roll of dice is considered as 1 day.
+        <br>
+        3. You can rest the game any time by clicking on the rest button
+        <br>
+        4. Roll a dice for a day is a special feature which rolls the dice 5 times and displays day result.
+    </div>
+</div>
+</body>
+</html>

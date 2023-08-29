@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!--    <link rel="stylesheet" type="text/css" href="/static/static.css">-->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='static.css') }}">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <title>Scrum Game</title>
+</head>
+<script>
+	$(document).ready(function() {
+		$('#game').click(function() {
+			window.location.href = '/gamePage';
+		});
+	});
+
+</script>
+<body style="background-image: url('https://media.giphy.com/media/5xtDarpTZP1hgRgReLK/giphy.gif');">
+<h1>
+    Welcome to Dice Scrum Game
+</h1>
+<br>
+<br>
+<button class="button buttonround" id="game"> Start Here</button>
+<br>
+<br>
+<h3>
+    Done by:
+    <br>
+    Akanksha Gottumukkala
+    <br>
+    Srihari Dasari
+    <br>
+    Kavitha Boya
+    <br>
+    Sushma Veeravalli
+    <br>
+</h3>
+</body>
+</html>

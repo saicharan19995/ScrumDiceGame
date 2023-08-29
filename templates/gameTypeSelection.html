@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='static.css') }}">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="./static/scripts.js"></script>
+    <title>Scrum Game</title>
+</head>
+<body>
+<h1>Select an Option:</h1>
+<form action='/select_option' method="POST">
+    <div class="verticalContainer">
+        <label class="label labelBackground">
+            <input type="radio" name="option" value="option1">
+            Work In Progress (WIP) Limit to the Refinement bowl.
+        </label>
+        <label class="label labelBackground">
+            <input type="radio" name="option" value="option2">
+            System WIP (aka ConWIP) Limit to your middle 4 bowls.
+        </label>
+        <label class="label labelBackground">
+            <input type="radio" name="option" value="option3">
+            Positive modifier (like +2)
+        </label>
+        <br>
+        <br>
+        <div class="verticalContainer">
+            <label class="label">Enter the value for above option</label>
+            <input class="input" type="number" value="0" name="newValue">
+        </div>
+    </div>
+    <br>
+    <div class="verticalContainer">
+        <label class="label"> Confirm to Procced with new configuration</label>
+        <input type="submit" value="Submit To New Game" class="button buttonround">
+    </div>
+</form>
+<div class="info-button">
+    <span class="info-text">i</span>
+    <div class="info-content">
+        a)” Work In Progress (WIP) Limit to the Refinement bowl”. If you select this option, you can be able to select a value below Enter the value for above option. Here you can set the WIP limit of your choice to the game and click on the submit button to start the game.
+        <br>
+        b) “System WIP (aka Con WIP) Limit to your Middle 4 Bowls”. If you select this option, you can select a value below as similar to (a) option, but it applicable for middle 4 bowls and click on submit button to start the game.
+        <br>
+        c) “Positive Modifier (like +2)”. If you select this option, you can be able to select either positive or negative value and click on the submit button to start the game.
+    </div>
+</div>
+<div class="config-button">
+    <button onclick="gamePage()" class="button buttonround">
+        Back to Normal
+    </button>
+</div>
+</body>
+</html>

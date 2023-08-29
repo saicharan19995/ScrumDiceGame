@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='static.css') }}">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="./static/scripts.js"></script>
+    <title>Scrum Game</title>
+</head>
+<body>
+<h1>Select an Option:</h1>
+<form action='/select_parameter_option' method="POST">
+    <div class="verticalContainer">
+        <label class="label labelBackground">
+            Select Dice Max Value
+            <select class="select-dropdown" name="dice_max">
+                <option class="select-option" value="4">4</option>
+                <option class="select-option" value="6" selected>6</option>
+                <option class="select-option" value="8">8</option>
+            </select>
+        </label>
+        <label class="label labelBackground">
+            Select Number of Buckets
+            <select class="select-dropdown" name="bucket_max">
+                <option class="select-option" value="5">5</option>
+                <option class="select-option" value="6" selected>6</option>
+                <option class="select-option" value="7">7</option>
+            </select>
+        </label>
+        <label class="label labelBackground">
+            Select Number of days for Game
+            <select class="select-dropdown" name="game_over_max">
+                <option class="select-option" value="5">5</option>
+                <option class="select-option" value="10" selected>10</option>
+                <option class="select-option" value="15">15</option>
+            </select>
+        </label>
+    </div>
+    <br>
+    <div class="verticalContainer">
+        <label class="label"> Confirm to Procced with new configuration</label>
+        <input type="submit" value="Submit To New Game" class="button buttonround">
+    </div>
+</form>
+<div class="info-button">
+    <span class="info-text">i</span>
+    <div class="info-content">
+        1. Click on Select Dice Max Value button to select the custom maximum value on the dice. You can have the maximum value on the dice as 4 or 6 or 8.
+        <br>
+        2. Click on Select Number of Buckets button to select the number of buckets on the game rather than having fixed number of buckets. You can have 5 to 7 buckets on the game as you wish.
+        <br>
+        3. Click on Select Number of Days for Game to have the customized count of days to complete a round of game. You can select the number of days as 5 or 10 or 15.    </div>
+</div>
+<div class="config-button">
+    <button onclick="gamePage()" class="button buttonround">
+        Back to Normal
+    </button>
+</div>
+</body>
+</html>

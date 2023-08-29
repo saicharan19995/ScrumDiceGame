@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='static.css') }}">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Load Bootstrap CSS and JS -->
+    <title>Scrum Game</title>
+</head>
+<body>
+    <table>
+		<thead>
+			<tr>
+				<th>Game Count</th>
+				{% for header in headers%}
+				<th>{{header}}</th>
+				{% endfor %}
+			</tr>
+		</thead>
+		<tbody>
+			{% for row in game_result %}
+			<tr>
+				<td><b>{{ loop.index }}</b></td>
+				{% for key, value in row.items() %}
+				<td>{{ value }}</td>
+				{% endfor %}
+			</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+</body>
+</html>
